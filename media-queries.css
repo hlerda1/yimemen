@@ -1,0 +1,16 @@
+@media screen and (max-width: 768px){
+    
+    
+}
+
+@media screen and (min-width: 769px) {
+    .mainDisplay{
+        height: 400px;
+        width: 600px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
