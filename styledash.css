@@ -1,0 +1,17 @@
+#yHeader{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 3em;
+    margin-bottom: 1em;
+    color: white;
+}
+
+/* #divHeader{
+    background-color: seagreen;
+} */
+
+.oneHeader{
+    height: 50px;
+    background-color: seagreen;
+    display: flex;
+
+}
