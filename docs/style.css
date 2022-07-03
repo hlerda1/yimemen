@@ -1,0 +1,25 @@
+body{
+    background-color: lightgrey;
+}
+
+footer{ 
+    background-color: darkgray;
+}
+
+footer p{
+    font-size: small;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#footDiv{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+#blockDiv{
+    padding-bottom: 20em;
+}
+
+

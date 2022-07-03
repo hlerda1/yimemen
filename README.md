@@ -5,3 +5,6 @@ Se creo el sistema de inicio de sesión, se configuró el formato básico de CSS
 
 Segundo Commit
 Lógica de login implementada. Dashboard creado. Archivos de stilo para las paginas implementados.
+
+Tercer Commit
+Lógica de login, agregar control de status de login. Tabla de Usuarios. Ajustes de CSS.
