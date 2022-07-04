@@ -2,10 +2,7 @@ window.onload = function() {
     let loginStatus = localStorage.getItem('loginStatusKey'); 
     if(loginStatus != 1){
         window.location.href="index.html";
-    }
-
-    
-    
+    }    
 }
 
 async function logoutClick(){
@@ -13,8 +10,7 @@ async function logoutClick(){
     window.location.href="index.html";
 }
 
-
-//USERS TABLE LOAD USING FETCH
+/* --USERS TABLE LOAD USING FETCH-- */
 var arrayListUsers = Array();
 
 fetch('https://basic-server-one.vercel.app/users')
@@ -22,19 +18,14 @@ fetch('https://basic-server-one.vercel.app/users')
     return data.json();
 })
 .then(response => {
-    // console.log(response.data)
     for (let i = 0; i < response.data.length; i++) {
         arrayListUsers[i] = response.data[i];
-        // console.log(arrayListUsers[i].address.street);
-
-        // Loading table
-        // (B1) GET TABLE
+        /* --Loading table-- */
+        // GET TABLE
         var table = document.getElementById("usersTable");
-  
-        // (B2) INSERT ROW
-        var row = table.insertRow();
-    
-        // (B3) INSERT CELLS
+        // INSERT ROW
+        var row = table.insertRow();    
+        // INSERT CELLS
         var cell = row.insertCell();
         cell.innerHTML = arrayListUsers[i].id;
         var cell = row.insertCell();
@@ -47,10 +38,33 @@ fetch('https://basic-server-one.vercel.app/users')
         cell.innerHTML = arrayListUsers[i].website;
         var cell = row.insertCell();
         cell.innerHTML = arrayListUsers[i].address.street +' | '+ arrayListUsers[i].address.suite +' | '+ arrayListUsers[i].address.city +' | '+ arrayListUsers[i].address.zipcode;
-
+        /* --Loading table-- */
     }
 })
 .catch(function(error){
-    console.log("Error", error)
-    alert("ERROR")
+    // console.log("Error", error);
+    // alert("ERROR" +'\n'+ error);
+
+    // Get the modal
+    var modal = document.getElementById("dashModal");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    modal.style.display = "block";
+    // alert("Usuario y contraseña invalidos")
+    // localStorage.setItem('loginStatusKey', 0)
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+    
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+        modal.style.display = "none";
+        }
+    }
 })
+/* --USERS TABLE LOAD USING FETCH-- */

@@ -14,5 +14,8 @@ Lógica de login implementada. Dashboard creado. Archivos de stilo para las pagi
 3- Julio 3 Commit
 Lógica de login, agregar control de status de login. Tabla de Usuarios. Ajustes de CSS.
 
-4- Julio 4 Comit
+4- Julio 4 Commit
 Actualización archivo README 
+
+5- Julio 4 Commit
+Validacion de inputs, Modal para Errores, Detalles de CSS y logica de validación.

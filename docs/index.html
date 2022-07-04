@@ -13,7 +13,11 @@
     </head>
     <body>
         <header>
-
+            <div id="alertBox">
+                <p id="formEmailError" class="hiddenError formatoError">No es un formato adecuado de Correo Electrónico</p>
+                <p id="noEmailError" class="hiddenError formatoError">Debe ingresar un Correo Electrónico</p>
+                <p id="noPassError" class="hiddenError formatoError">Debe ingresar una Contraseña</p>
+            </div>
         </header>
         <main>
             <div class="oneDiv">
@@ -25,13 +29,13 @@
                     <div>
                         <form action="">
                             <div class="">
-                                <input type="email" id="emailLogin" name="emailLog" placeholder="Correo Electrónico" class="logInput">   
+                                <input type="email" id="emailLogin" name="emailLog" placeholder="Correo Electrónico" class="logInput" required>   
                             </div>
                             <div class="">
-                                <input type="password" id="passLogin" name="passLog" placeholder="Contraseña" class="logInput">   
+                                <input type="password" id="passLogin" name="passLog" placeholder="Contraseña" class="logInput" required>   
                             </div>
                             <div class="">                            
-                                <button type="button" class="logInput" onclick="clickEnviar()">Inciar Sesión</button>
+                                <button type="button" id="btnEnviar" class="logInput" onclick="clickLogin()">Inciar Sesión</button>
                             </div>   
                         </form>
                     </div>
@@ -39,6 +43,15 @@
             </div>
             <div id="blockDiv">
             </div>
+            <!-- The Modal -->
+            <div id="indexModal" class="modal">
+                <!-- Modal content -->
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>La combinación de usuario y contraseña es incorrecta</h2>
+                </div>            
+            </div>
+            <!-- The Modal -->
         </main>
         <footer>
             <div id='footDiv'>
