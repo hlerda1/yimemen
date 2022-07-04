@@ -81,42 +81,44 @@ async function clickLogin(){
     validateBtnEmail();
     validateBtnPassword()
 
-    let x = await fetch("https://basic-server-one.vercel.app/login", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-            // email: "valeria@gmail.com",
-            // password: "lppa2022",
-            email: document.getElementById('emailLogin').value,
-            password: document.getElementById('passLogin').value
+    if(validateBtnEmail() == true && validateBtnPassword() == true){
+        let x = await fetch("https://basic-server-one.vercel.app/login", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                // email: "valeria@gmail.com",
+                // password: "lppa2022",
+                email: document.getElementById('emailLogin').value,
+                password: document.getElementById('passLogin').value
+            })
         })
-    })
-    if (x.status == 200){
-        localStorage.setItem('loginStatusKey', 1);
-        window.location.href="dashboard.html";
-    }
-    else{
-        // Get the modal
-        var modal = document.getElementById("indexModal");
-
-        // Get the <span> element that closes the modal
-        var span = document.getElementsByClassName("close")[0];
-
-        modal.style.display = "block";
-        // alert("Usuario y contraseña invalidos")
-        localStorage.setItem('loginStatusKey', 0)
-
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function() {
-            modal.style.display = "none";
+        if (x.status == 200){
+            localStorage.setItem('loginStatusKey', 1);
+            window.location.href="dashboard.html";
         }
-        
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function(event) {
-            if (event.target == modal) {
-            modal.style.display = "none";
+        else{
+            // Get the modal
+            var modal = document.getElementById("indexModal");
+
+            // Get the <span> element that closes the modal
+            var span = document.getElementsByClassName("close")[0];
+
+            modal.style.display = "block";
+            // alert("Usuario y contraseña invalidos")
+            localStorage.setItem('loginStatusKey', 0)
+
+            // When the user clicks on <span> (x), close the modal
+            span.onclick = function() {
+                modal.style.display = "none";
+            }
+            
+            // When the user clicks anywhere outside of the modal, close it
+            window.onclick = function(event) {
+                if (event.target == modal) {
+                modal.style.display = "none";
+                }
             }
         }
     }
